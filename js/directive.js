@@ -1,6 +1,6 @@
 angular.module('TodoDirective',[]).directive('todoTable', function() {
   return {
-    restrict: 'A',    // A -> attribute
+    restrict: 'E',    // E -> element
     templateUrl: 'templates/directives/todo-table.html'
   };
 });
