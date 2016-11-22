@@ -8,10 +8,14 @@
             </tr>
         </thead>
         <tr ng-repeat="todo in todos">
-            <td>{{todo.title}}</td>
-            <td>{{todo.description}}</td>
-            <td>{{todo.status}}</td>
-        </tr>
+        <td>{{todo.title}}</td>
+        <td>{{todo.description}}</td>
+        <td>{{todo.status}}</td>
+        <td>
+            <button ng-click="editTodo(id)"><span class="glyphicon glyphicon-edit"></span></button>
+            <button ng-click="deleteTodo(id)"><span class="glyphicon glyphicon-trash"></span></button>
+        </td>
+    </tr>
     </table>
     <button type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#todo-modal">Create New Todo Item</button>
  
