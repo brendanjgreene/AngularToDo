@@ -1,0 +1,22 @@
+{
+  "name": "angular_to_do",
+  "description": "package for angular to do project",
+  "main": "index.js",
+  "authors": [
+    "Brendan Greene"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/brendanjgreene/AngularToDo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
