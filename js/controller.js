@@ -2,6 +2,9 @@ angular.module('RouteControllers', [])
     .controller('HomeController', function($scope) {
         $scope.title = "Welcome To Angular Todo!";
     })
+    .controller('logOutController', function($scope) {
+        $scope.title = "You are Logged Out!";
+    })
     .controller('RegisterController', function($scope, UserAPIService, store) {
         $scope.registrationUser = {};
         var URL = "https://morning-castle-91468.herokuapp.com/";
