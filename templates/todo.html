@@ -1,0 +1,18 @@
+<div class="container">
+<table class="table">
+    <thead>
+        <tr>
+            <td><strong>Title</strong></td>
+            <td><strong>Description</strong></td>
+            <td><strong>Status</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="todo in todos">
+            <td>{{todo.title}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.status}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
