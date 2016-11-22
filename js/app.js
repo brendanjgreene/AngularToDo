@@ -9,6 +9,14 @@ angular.module('TodoApp').config(function($routeProvider) {
         templateUrl: 'templates/register.html',
         controller: 'RegisterController'
     })
+    .when('/accounts/logIn', {
+        templateUrl: 'templates/logIn.html',
+        controller: 'logInController'
+    })
+    .when('/accounts/logOut', {
+        templateUrl: 'templates/logOut.html',
+        controller: 'logOutController'
+    })
     .when('/todo', {
         templateUrl: 'templates/todo.html',
         controller: 'TodoController'
