@@ -2,11 +2,11 @@ angular.module('UserService', [])
 	.factory('UserAPIService', function($http) {
 		UserAPIService = {
 			callAPI: function(url, data) {
-				return $http.post(url, data);
+				return $http.post(url, data)
 			}
-		};
+		}
 		return UserAPIService;
-	});
+	})
 
 angular.module('TodoService', [])
     .factory('TodoAPIService', function($http) {
@@ -27,7 +27,7 @@ angular.module('TodoService', [])
 	            header = "Authorization: JWT " + token;
 	            return $http.delete(url, token);
 	        }
-        };
+        }
 
         return TodoAPIService;
     });
