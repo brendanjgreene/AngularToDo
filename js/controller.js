@@ -96,9 +96,9 @@ angular.module('RouteControllers', [])
             });
         };
         
-        //if(!store.get('authToken')) { //enable this to prevent not logged in users from acessing todo page
-            //$location.path("/");
-        //}
+        if(!store.get('authToken')) { //enable this to prevent not logged in users from acessing todo page
+            $location.path("/");
+        }
     })
     .controller('EditTodoController', function($scope, $location, $routeParams, TodoAPIService, store) {
         var id = $routeParams.id;
