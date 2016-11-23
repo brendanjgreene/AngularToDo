@@ -2,7 +2,7 @@ angular.module('RouteControllers', [])
     .controller('HomeController', function($scope) {
         $scope.title = "Welcome To Angular Todo!";
     })
-    .controller('logOutController', function($scope, store) {
+    .controller('LogOutController', function($scope, store) {
         $scope.title = "You are Logged Out!";
         store.remove('username');
         store.remove('authToken');
@@ -36,7 +36,7 @@ angular.module('RouteControllers', [])
             }
         };
     })
-    .controller('LogInController', function($scope, $location, UserService, store) {
+    .controller('LogInController', function($scope, $location, UserAPIService, store) {
         var url = "https://morning-castle-91468.herokuapp.com/";
 
         $scope.submitForm = function() {

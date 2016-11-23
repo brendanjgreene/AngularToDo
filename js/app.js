@@ -1,4 +1,4 @@
-angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angular-storage', 'TodoService']);
+angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angular-storage', 'TodoService', 'TodoDirective']);
  
 angular.module('TodoApp').config(function($routeProvider) {
     $routeProvider.when('/', {
@@ -15,7 +15,7 @@ angular.module('TodoApp').config(function($routeProvider) {
     })
     .when('/accounts/logOut', {
         templateUrl: 'templates/logOut.html',
-        controller: 'logOutController'
+        controller: 'LogOutController'
     })
     .when('/todo', {
         templateUrl: 'templates/todo.html',
