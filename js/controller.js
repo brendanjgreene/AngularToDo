@@ -2,8 +2,10 @@ angular.module('RouteControllers', [])
     .controller('HomeController', function($scope) {
         $scope.title = "Welcome To Angular Todo!";
     })
-    .controller('logOutController', function($scope) {
+    .controller('logOutController', function($scope, store) {
         $scope.title = "You are Logged Out!";
+        store.remove('username');
+        store.remove('authToken');
     })
     .controller('RegisterController', function($scope, UserAPIService, store) {
         $scope.registrationUser = {};
@@ -42,15 +44,13 @@ angular.module('RouteControllers', [])
                 $scope.logInUser.username = $scope.user.username;
                 $scope.logInUser.password = $scope.user.password;
             
-
-
-            UserAPIService.callAPI(URL + "accounts/api-token-auth/", $scope.data).then(function(results) {
-                $scope.token = results.data.token;
-                store.set('username', $scope.logInUser.username);
-                store.set('authToken', $scope.token);
-                $location.path("/todo");
-            }).catch(function(err) {
-                console.log(err);
+                UserAPIService.callAPI(URL + "accounts/api-token-auth/", $scope.data).then(function(results) {
+                    $scope.token = results.data.token;
+                    store.set('username', $scope.logInUser.username);
+                    store.set('authToken', $scope.token);
+                    $location.path("/todo");
+                }).catch(function(err) {
+                    console.log(err);
             });
         };
 
