@@ -36,40 +36,27 @@ angular.module('RouteControllers', [])
             }
         };
     })
-    .controller('logInController', function($scope, UserService, store) {
-        var URL = "https://morning-castle-91468.herokuapp.com/";
+    .controller('LogInController', function($scope, $location, UserService, store) {
+        var url = "https://morning-castle-91468.herokuapp.com/";
 
         $scope.submitForm = function() {
-            if($scope.logInForm.$isValid)
+            if ($scope.logInForm.$isValid) {
                 $scope.logInUser.username = $scope.user.username;
                 $scope.logInUser.password = $scope.user.password;
-            
-                UserAPIService.callAPI(URL + "accounts/api-token-auth/", $scope.data).then(function(results) {
+
+                UserAPIService.callAPI(url + "accounts/api-token-auth", $scope.data).then(function(results) {
                     $scope.token = results.data.token;
                     store.set('username', $scope.logInUser.username);
                     store.set('authToken', $scope.token);
                     $location.path("/todo");
                 }).catch(function(err) {
                     console.log(err);
-            });
-        };
-
-        $scope.submitForm = function() {
-            if ($scope.logInForm.$valid) {
-                $scope.logInUser.username = $scope.user.username;
-                $scope.logInUser.password = $scope.user.password;
-
-                UserAPIService.callAPI(URL + "accounts/register/", $scope.registrationUser).then(function(results) {
-                    $scope.data = results.data;
-                    alert("You have successfully logged in to Angular Todo");
-                    $scope.login();
-                }).catch(function(err) {
-                    alert("Oops! Something went wrong!");
                 });
             }
         };
     })
     .controller('TodoController', function($scope, $location, TodoAPIService, store) {
+
         var URL = "https://morning-castle-91468.herokuapp.com/";
  
         $scope.authToken = store.get('authToken');
@@ -108,6 +95,10 @@ angular.module('RouteControllers', [])
                 console.log(err);
             });
         };
+        
+        //if(!store.get('authToken')) { //enable this to prevent not logged in users from acessing todo page
+            //$location.path("/");
+        //}
     })
     .controller('EditTodoController', function($scope, $location, $routeParams, TodoAPIService, store) {
         var id = $routeParams.id;
