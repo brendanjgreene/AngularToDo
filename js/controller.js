@@ -77,7 +77,7 @@ angular.module('RouteControllers', [])
         };
 
         if (!store.get('authToken')) {
-            $location.path("/");
+            $location.path("/accounts/register");
         }
 
         TodoAPIService.getTodos(url + "todo/", $scope.username, $scope.authToken).then(function(results) {
