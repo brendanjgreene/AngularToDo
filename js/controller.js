@@ -7,7 +7,7 @@ angular.module('RouteControllers', [])
         store.remove('username');
         store.remove('authToken');
     })
-    .controller('RegisterController', function($scope, UserAPIService, store) {
+    .controller('RegisterController', function($scope, $location, UserAPIService, store) {
         $scope.registrationUser = {};
         var url = "https://morning-castle-91468.herokuapp.com/";
 
