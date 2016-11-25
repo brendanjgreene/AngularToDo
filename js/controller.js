@@ -37,7 +37,7 @@ angular.module('RouteControllers', [])
             }
         };
     })
-    .controller('LoginController', function($scope, $location, UserService, store) {
+    .controller('LoginController', function($scope, $location, UserService, UserAPIService, store) {
         var url = "https://morning-castle-91468.herokuapp.com/";
 
         $scope.submitForm = function() {
