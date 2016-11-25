@@ -9,9 +9,9 @@ angular.module('TodoApp').config(function($routeProvider) {
         templateUrl: 'templates/register.html',
         controller: 'RegisterController'
     })
-    .when('/accounts/logIn', {
-        templateUrl: 'templates/logIn.html',
-        controller: 'LogInController'
+    .when('/accounts/login', {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginController'
     })
     .when('/accounts/logOut', {
         templateUrl: 'templates/logOut.html',
