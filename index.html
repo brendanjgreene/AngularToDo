@@ -20,15 +20,20 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+                    </button>
                 <a class="navbar-brand" href="#/">Angular Todo</a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/">Home</a></li>
-                <li><a href="#/todo">Todo</a></li>
-                <li><a href="#/accounts/register">Register</a></li>
-                <li><a href="#/accounts/logIn">Log In</a></li>
-                <li><a href="#/accounts/logOut">Log Out</a></li>
-            </ul>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/todo">Todo</a></li>
+                    <li><a href="#/accounts/register">Register</a></li>
+                    <li><a href="#/accounts/logIn">Log In</a></li>
+                    <li><a href="#/accounts/logOut">Log Out</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <div ng-view>
